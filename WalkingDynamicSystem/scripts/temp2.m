@@ -1,0 +1,13 @@
+CurrentFolder = cd;
+fid = fopen([CurrentFolder filesep 'temp.m'],'w');
+xft = 0;
+fprintf(fid,'%s\n','function [ Fgx,Fgy ] = GroundReactionForce( x,theta,xf,xf_dot,yf,yf_dot )');
+fprintf(fid,'%s %f\n','xft=',xft);
+fprintf(fid,'%s\n','% LoadParameter;');
+fprintf(fid,'%s\n','kg = 30000.0; bg = 1000.0;lf(1) = 0.08; lf(2) = 0.12; lf(3) = 0.10;Alpha(1) = 1.22; Alpha(2) = 2.44;');
+fprintf(fid,'%s\n','for ii = 1 : 4');
+fprintf(fid,'%s\n','Fgx(ii) = (-kg*(xf(ii)-xft(ii))-bg*xf_dot(ii))*lun(-yf(ii));');
+fprintf(fid,'%s\n','Fgy(ii) = (-kg*(yf(ii))+bg*fun(-yf_dot(ii)))*lun(-yf(ii));');
+fprintf(fid,'%s\n','end');
+fprintf(fid,'%s\n','end');
+fclose(fid);
