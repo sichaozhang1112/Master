@@ -5,7 +5,7 @@ load([MatFolder filesep MatFile]);
 figure()
 lin = linspace(0,1,10);
 
-for ii = 1 : 10 : 600
+for ii = 100 : 20 : 200
     scatter(head(ii,1),head(ii,2),'k');
     hold on;
     scatter(waist(ii,1),waist(ii,2),'k');
@@ -49,24 +49,24 @@ end
 plot(lin*6,zeros(10,1),'k')
 % xlim([0.8 1.8]);
 axis equal
-axis([1,3.5,-0.05,1.8]);
+axis([0,3.5,-0.05,1.8]);
 
 %%
-figure(1)
-for ii = 1 : 8
-    subplot(2,4,ii);
-    
-    plot(t(139 :174),theta(139:174,ii),'r');
-    hold on;
-    plot(t(175 : 272),theta(175 : 272,ii),'b');
-    hold on;
-    plot(t(273 : 440),theta(273 : 440,ii),'g');
-    hold on;
-    plot(t(441 : 461),theta(441 : 461,ii),'y');
-    hold on;
-    plot(t(462 : 557),theta(462 : 557,ii),'c');
-    hold on;
-    plot(t(558 : 751),theta(558 : 751,ii),'k');
-    hold on;
-    
-end
+% figure(1)
+% for ii = 1 : 8
+%     subplot(2,4,ii);
+%     
+%     plot(t(139 :174),theta(139:174,ii),'r');
+%     hold on;
+%     plot(t(175 : 272),theta(175 : 272,ii),'b');
+%     hold on;
+%     plot(t(273 : 440),theta(273 : 440,ii),'g');
+%     hold on;
+%     plot(t(441 : 461),theta(441 : 461,ii),'y');
+%     hold on;
+%     plot(t(462 : 557),theta(462 : 557,ii),'c');
+%     hold on;
+%     plot(t(558 : 751),theta(558 : 751,ii),'k');
+%     hold on;
+%     
+% end
