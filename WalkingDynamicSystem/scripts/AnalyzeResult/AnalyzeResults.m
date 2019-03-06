@@ -1,3 +1,4 @@
+%%
 [MatFile,MatFolder] = ...
     uigetfile('*.mat','Pick the file');
 load([MatFolder filesep MatFile]);
@@ -23,65 +24,14 @@ for ii = 1 : 1000
 [ Ta(ii,:) ] = ActiveJointTorque( Tm(ii,:) );
 
 end
-
+%%
 for ii = 1:6
     subplot(6,1,ii)
     plot((1:1000),Sg(1:1000,ii));
     xlabel('t');
     ylabel(['Sg',num2str(ii)]);
 end
+
 %%
-% figure(1);
-% for ii = 1:20
-%     hold on;
-%     subplot(4,5,ii)
-%     plot(t(1:590),Tm(1:590,ii));
-%     ylabel(['Tm',num2str(ii)]);
-% end
-%%
-% figure(1);
-% 
-% for ii = 1 : 2
-%     hold on;
-%     subplot(3,2,ii)
-%     plot(linspace(1,94,595),theta(1:595,2)-theta(1:595,ii+2));
-%     xlabel('gait');
-%     ylabel(['hip_',num2str(ii)]);
-%     hold on;
-%     subplot(3,2,ii+2)
-%     plot(linspace(1,94,595),theta(1:595,ii+2)-theta(1:595,ii+4));
-%     xlabel('gait');
-%     ylabel(['knee_',num2str(ii)]);
-%     hold on;
-%     subplot(3,2,ii+4)
-%     plot(linspace(1,94,595),theta(1:595,ii+4)-theta(1:595,ii+6));
-%     xlabel('gait');
-%     ylabel(['ankle_',num2str(ii)]);
-% end
-% %%
-% figure(2);
-% 
-% for ii = 1:7
-%     subplot(2,4,ii)
-%     plot(t(1:300),Ta(1:300,ii));
-%     xlabel('t');
-%     ylabel(['Ta',num2str(ii)]);
-% end
-% 
-% figure(3);
-% 
-% for ii = 1:7
-%     subplot(2,4,ii)
-%     plot(t(1:300),Tp(1:300,ii));
-%     xlabel('t');
-%     ylabel(['Tp',num2str(ii)]);
-% end
-% %%
-% figure(4);
-% 
-% for ii = 1:6
-%     subplot(6,1,ii)
-%     plot((1:1000),Sg(1:1000,ii));
-%     xlabel('t');
-%     ylabel(['Sg',num2str(ii)]);
-% end
+clear;
+

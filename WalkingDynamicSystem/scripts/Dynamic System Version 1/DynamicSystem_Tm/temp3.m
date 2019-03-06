@@ -1,0 +1,2 @@
+[ x_new,x_dot_new,y_new,y_dot_new,theta_new,theta_dot_new ] = ReducedToFullState( yout(:,idx-1) );
+[ xf_new,xf_dot_new,yf_new,yf_dot_new ] = HeelAndToe( x_new,x_dot_new,y_new,y_dot_new,theta_new,theta_dot_new );

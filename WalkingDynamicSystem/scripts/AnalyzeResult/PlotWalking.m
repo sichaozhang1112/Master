@@ -1,3 +1,4 @@
+%%
 [MatFile,MatFolder] = ...
     uigetfile('*.mat','Pick the file');
 load([MatFolder filesep MatFile]);
@@ -5,7 +6,7 @@ load([MatFolder filesep MatFile]);
 figure()
 lin = linspace(0,1,10);
 
-for ii = 100 : 20 : 200
+for ii = 266 : 1 : 266
     scatter(head(ii,1),head(ii,2),'k');
     hold on;
     scatter(waist(ii,1),waist(ii,2),'k');
