@@ -4,12 +4,15 @@
 load([MatFolder filesep MatFile]);
 
 %%
+% StanceStartNum = 1;
+% SwingEndNum = 500;
 EndNum = SwingEndNum-StanceStartNum+1;
 Theta = theta(StanceStartNum:SwingEndNum,:)*180/pi;
 % Theta = [theta_temp(SwingEndNum+1:EndNum,:);theta_temp(1:SwingStartNum,:);theta_temp(SwingStartNum+1:SwingEndNum,:)];
-Color = [0 0.5 1];Pattern = '-'; % normal
-% Color = [1 0.5 0];Pattern = '-'; % footdrop
-% Color = [1 0 0.5];Pattern = '-'; % foot drop with device Tau
+% Color = [0 0.5 1];Pattern = '-'; % normal
+% Color = [1 0.5 0];Pattern = '-'; % disable Tm17
+% Color = [0.5 1 0];Pattern = '-'; % change u13, y14
+Color = [1 0 0.5];Pattern = '-'; % disable Tm17 with device Tau
 figure(1);
 for ii = 1 : 2
     hold on;

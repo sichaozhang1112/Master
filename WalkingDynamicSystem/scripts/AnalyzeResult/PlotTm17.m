@@ -6,7 +6,7 @@ load([MatFolder filesep MatFile]);
 Color = [0 0.5 1];Pattern = '-'; % normal
 
 %%
-for ii = 1 : 1000
+for ii = 1 : 6000
 
 [ xf(ii,:),xf_dot(ii,:),yf(ii,:),yf_dot(ii,:) ] = HeelAndToe( x(ii,:)',x_dot(ii,:)',y(ii,:)',y_dot(ii,:)',theta(ii,:)',theta_dot(ii,:)' );
 
@@ -28,7 +28,10 @@ for ii = 1 : 1000
 end
 %%
 figure();
-plot(linspace(0,100,EndNum),[(Tm(SwingEndNum+1:EndNum,17));(Tm(1:SwingStartNum,17));(Tm(SwingStartNum+1:SwingEndNum,17))],'color',Color);
+StanceStartNum = 1;
+SwingEndNum = 3000;
+EndNum = SwingEndNum - StanceStartNum + 1;
+plot(t(StanceStartNum:SwingEndNum),Tm(StanceStartNum:SwingEndNum,17),'color',Color);
 
 clear;
 
@@ -39,6 +42,9 @@ load([MatFolder filesep MatFile]);
 
 Color = [1 0 0.5];Pattern = '-'; % foot drop with device Tau
 hold on;
-plot(linspace(0,100,EndNum),[(TM17(SwingEndNum+1:EndNum));(TM17(1:SwingStartNum));(TM17(SwingStartNum+1:SwingEndNum))],'color',Color);
+StanceStartNum = 1;
+SwingEndNum = 3000;
+EndNum = SwingEndNum - StanceStartNum + 1;
+plot(t(StanceStartNum:SwingEndNum),TM17(StanceStartNum:SwingEndNum),'color',Color);
 clear;
 

@@ -4,7 +4,7 @@
 load([MatFolder filesep MatFile]);
 
 %%
-for ii = 1 : 1000
+for ii = 1 : 6000
 
 [ xf(ii,:),xf_dot(ii,:),yf(ii,:),yf_dot(ii,:) ] = HeelAndToe( x(ii,:)',x_dot(ii,:)',y(ii,:)',y_dot(ii,:)',theta(ii,:)',theta_dot(ii,:)' );
 
@@ -25,12 +25,16 @@ for ii = 1 : 1000
 
 end
 %%
+figure();
 for ii = 1:6
     subplot(6,1,ii)
-    plot((1:1000),Sg(1:1000,ii));
+    plot((1:1500),Sg(1:1500,ii));
     xlabel('t');
     ylabel(['Sg',num2str(ii)]);
 end
+
+figure();
+plot(1:6000,phi(1:6000,1))
 
 %%
 clear;
